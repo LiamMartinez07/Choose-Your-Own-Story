@@ -245,8 +245,7 @@ public class ChooseYourOwnStory {
                                                 System.out.println(
                                                                 "Another decision awaits: You're in the front, should you go in the Mosh pit or try to push to the front railing to see the band better? Respond with 'mosh' or 'railing'");
 
-                                                // not ready, sleep, breakfast yes, cheerios, concert front,
-                                                // mosh
+                                                // not ready, sleep, breakfast no, concert front, mosh
                                                 String moshOrFront = sc.nextLine();
 
                                                 if (moshOrFront.equals("mosh")) {
@@ -262,8 +261,7 @@ public class ChooseYourOwnStory {
 
                                                 }
 
-                                                // not ready, sleep, breakfast yes, cheerios, concert front,
-                                                // railing
+                                                // not ready, sleep, breakfast no, concert front, railing
                                                 else if (moshOrFront.equals("railing")) {
                                                         System.out.println(
                                                                         "You push to the railing and get the best view in the whole concert, without having to take on the fearsome mosh pit!");
@@ -320,7 +318,7 @@ public class ChooseYourOwnStory {
                                                                 "Now you decide to go see a Lorna Shore concert. Once you arrive, you have a decision: Do you stay in the back of the venue or try to go up to the front? Respond with 'back' or 'front'.");
                                                 String concertLocation = sc.nextLine();
 
-                                                // not ready, sleep, breakfast yes, fish, concert back
+                                                // not ready, sleep, breakfast yes, cheerios, concert back
                                                 if (concertLocation.equals("back")) {
                                                         System.out.println(
                                                                         "Congratulations, you've managed to avoid getting hurt, however you've had significantly less fun...");
@@ -332,7 +330,7 @@ public class ChooseYourOwnStory {
                                                                                         + funPoints
                                                                                         + " fun points!");
 
-                                                        // not ready, sleep, breakfast yes, fish, concert front
+                                                        // not ready, sleep, breakfast yes, cheerios, concert front
                                                 } else if (concertLocation.equals("front")) {
                                                         System.out.println(
                                                                         "There we go! You know how to have fun! Unfortunately, while you were watching the show a 250 lbs man who was croudsurfing falls on you, injuring your toe.");
@@ -461,16 +459,84 @@ public class ChooseYourOwnStory {
                                                 System.out.println("Wrong answer. You died. Try again.");
                                         }
 
-                                }
+                                } else if (eatBreakfastOrNo.equals("no")) {
+                                        System.out.println(
+                                                        "What!?! Breakfast is the most important meal of the day, don't you know that? Because of this lack of nutrition your body starts to atrophy, and you lose significant health points and fun points...");
+                                        healthPoints -= 45;
+                                        funPoints -= 25;
+                                        System.out.println(
+                                                        "You have a total of " + healthPoints
+                                                                        + " health points, and a total of " + funPoints
+                                                                        + " fun points!");
+                                        // Concert starts
+                                        System.out.println(
+                                                        "Now you decide to go see a Lorna Shore concert. Once you arrive, you have a decision: Do you stay in the back of the venue or try to go up to the front? Respond with 'back' or 'front'.");
+                                        String concertLocation = sc.nextLine();
 
-                                else {
+                                        // not ready, sleep, breakfast no, concert back
+                                        if (concertLocation.equals("back")) {
+                                                System.out.println(
+                                                                "Congratulations, you've managed to avoid getting hurt, however you've had significantly less fun...");
+                                                healthPoints += 5;
+                                                funPoints -= 25;
+                                                System.out.println(
+                                                                "You have a total of " + healthPoints
+                                                                                + " health points, and a total of "
+                                                                                + funPoints
+                                                                                + " fun points!");
+
+                                                // not ready, sleep, breakfast no, concert front
+                                        } else if (concertLocation.equals("front")) {
+                                                System.out.println(
+                                                                "There we go! You know how to have fun! Unfortunately, while you were watching the show a 250 lbs man who was croudsurfing falls on you, injuring your toe.");
+                                                healthPoints -= 10;
+                                                funPoints += 30;
+                                                System.out.println(
+                                                                "You have a total of " + healthPoints
+                                                                                + " health points, and a total of "
+                                                                                + funPoints
+                                                                                + " fun points!");
+                                                System.out.println(
+                                                                "Another decision awaits: You're in the front, should you go in the Mosh pit or try to push to the front railing to see the band better? Respond with 'mosh' or 'railing'");
+
+                                                // not ready, sleep, breakfast no, concert front, mosh
+                                                String moshOrFront = sc.nextLine();
+
+                                                if (moshOrFront.equals("mosh")) {
+                                                        System.out.println(
+                                                                        "Well, you had a lot of fun, but caught a flying elbow in the face... Gotta put on some muscle for next time, I guess.");
+                                                        healthPoints -= 20;
+                                                        funPoints += 30;
+                                                        System.out.println(
+                                                                        "You have a total of " + healthPoints
+                                                                                        + " health points, and a total of "
+                                                                                        + funPoints
+                                                                                        + " fun points!");
+
+                                                }
+
+                                                // not ready, sleep, breakfast no, concert front, railing
+                                                else if (moshOrFront.equals("railing")) {
+                                                        System.out.println(
+                                                                        "You push to the railing and get the best view in the whole concert, without having to take on the fearsome mosh pit!");
+                                                        System.out.println(
+                                                                        "Congratulations, if you went down this path you had the most fun possible! Wheeeeeeeeeeee! You ended with a total amount of "
+                                                                                        + funPoints
+                                                                                        + " fun points and "
+                                                                                        + healthPoints
+                                                                                        + " health points!");
+                                                }
+
+                                                else {
+                                                        System.out.println("Wrong answer. You died. Try again.");
+                                                }
+                                        } else {
+                                                System.out.println("Wrong answer. You died. Try again.");
+                                        }
+                                } else {
                                         System.out.println("Wrong answer. You died. Try again.");
                                 }
-                        } else {
-                                System.out.println("Wrong answer. You died. Try again.");
                         }
-                } else {
-                        System.out.println("Wrong answer. You died. Try again.");
                 }
         }
 }
